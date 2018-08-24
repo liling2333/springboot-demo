@@ -1,0 +1,5 @@
+server:
+  port: 8080
+person:
+  name: aaa
+  age: 12

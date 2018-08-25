@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
 import java.io.Serializable;
 
 @Entity
@@ -14,6 +15,7 @@ public class PersonTest implements Serializable{
 
     private  String name;
 
+    @Min(value = 18, message = "未成年人禁止添加")
     private int age;
 
     private String sex;
@@ -23,6 +25,10 @@ public class PersonTest implements Serializable{
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -47,5 +53,15 @@ public class PersonTest implements Serializable{
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    @Override
+    public String toString() {
+        return "PersonTest{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", sex='" + sex + '\'' +
+                '}';
     }
 }

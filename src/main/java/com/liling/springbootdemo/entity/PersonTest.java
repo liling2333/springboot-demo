@@ -21,6 +21,9 @@ public class PersonTest implements Serializable{
     public PersonTest() {
     }
 
+    public int getId() {
+        return id;
+    }
 
     public void setId(int id) {
         this.id = id;
